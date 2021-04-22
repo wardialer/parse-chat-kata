@@ -170,7 +170,7 @@ The output should be
 }]
 ```
 
-### Step 6 - Support Agent or Customer with full Name and Surname
+### Step 6 (full name)
 
 _note:_ an example in which both the Agent and the Customer have full name
 
@@ -196,7 +196,7 @@ The output should be
 }]
 ```
 
-### Step 7 - Extra (missing colon after the names)
+### Step 7 [Extra] (missing colon after the names)
 
 _note:_ an example in which there is no colon after both Agent and Customer names
 
