@@ -95,6 +95,7 @@ Given the input
 14:24:32 Customer : Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 14:27:00 Customer : Pellentesque cursus maximus felis, pharetra porta purus aliquet viverra.
 14:27:47 Agent : Vestibulum tempor diam eu leo molestie eleifend.
+14:28:28 Customer : Contrary to popular belief, Lorem Ipsum is not simply random text.
 ```
 
 The output should be
@@ -115,6 +116,11 @@ The output should be
   mention: '14:27:47 Agent : ',
   sentence: 'Vestibulum tempor diam eu leo molestie eleifend.',
   type: 'agent'
+}, {
+  date: '14:28:28',
+  mention: '14:28:28 Customer : ',
+  sentence: 'Contrary to popular belief, Lorem Ipsum is not simply random text.',
+  type: 'customer'
 }]
 ```
 
