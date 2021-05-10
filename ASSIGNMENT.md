@@ -114,7 +114,7 @@ The output should be
 }, {
   date: '14:27:47',
   mention: '14:27:47 Agent : ',
-  sentence: 'Vestibulum tempor diam eu leo molestie eleifend.',
+  sentence: 'Vestibulum tempor diam eu leo molestie eleifend.\n',
   type: 'agent'
 }, {
   date: '14:28:28',
@@ -193,12 +193,12 @@ The output should be
   date: '14:24:32',
   mention: '14:24:32 Luca Galasso : ',
   sentence: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  type: 'Luca Galasso'
+  type: 'customer'
 }, {
   date: '14:26:15',
   mention: '14:26:15 Emanuele Querzola : ',
   sentence: 'I received the package, ut blandit lectus.',
-  type: 'Emanuele Querzola'
+  type: 'agent'
 }]
 ```
 
