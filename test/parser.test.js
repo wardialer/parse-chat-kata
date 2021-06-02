@@ -90,3 +90,68 @@ test('date splitting', () => {
 
   expect(chatParser(input)).toEqual(output);
 });
+
+test('ignore extra dates', () => {
+  const input = [
+    '14:24:32 Customer : Lorem ipsum dolor sit amet, consectetur adipiscing elit.14:26:15 Agent : I received it at 12:24:48, ut blandit lectus.',
+  ].join('\n');
+
+  const output = [{
+    date: '14:24:32',
+    mention: '14:24:32 Customer : ',
+    sentence: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    type: 'customer'
+  }, {
+    date: '14:26:15',
+    mention: '14:26:15 Agent : ',
+    sentence: 'I received it at 12:24:48, ut blandit lectus.',
+    type: 'agent'
+  }];
+
+
+  expect(chatParser(input)).toEqual(output);
+});
+
+test('full name', () => {
+  const input = [
+    '14:24:32 Luca Galasso : Lorem ipsum dolor sit amet, consectetur adipiscing elit.14:26:15 Emanuele Querzola : I received the package, ut blandit lectus.',
+  ].join('\n');
+
+  const output = [{
+    date: '14:24:32',
+    mention: '14:24:32 Luca Galasso : ',
+    sentence: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    type: 'customer'
+  }, {
+    date: '14:26:15',
+    mention: '14:26:15 Emanuele Querzola : ',
+    sentence: 'I received the package, ut blandit lectus.',
+    type: 'agent'
+  }]
+  ;
+
+
+  expect(chatParser(input)).toEqual(output);
+});
+
+test('missing colon after the names', () => {
+  const input = [
+    '14:24:32 Customer Lorem ipsum dolor sit amet, consectetur adipiscing elit.14:26:15 Agent I received it at 12:24:48, ut blandit lectus.',
+  ].join('\n');
+
+  const output = [{
+    date: '14:24:32',
+    mention: '14:24:32 Customer ',
+    sentence: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    type: 'customer'
+  }, {
+    date: '14:26:15',
+    mention: '14:26:15 Agent ',
+    sentence: 'I received it at 12:24:48, ut blandit lectus.',
+    type: 'agent'
+  }]
+  ;
+
+
+  expect(chatParser(input)).toEqual(output);
+});
