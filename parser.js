@@ -1,4 +1,4 @@
-const parseRegex = /^((\d{2}[:]\d{2}[:]\d{2}) (.+) : )(.+\n?)$/m;
+const parseRegex = /^((\d{2}[:]\d{2}[:]\d{2}) (?:(.+) : |(\b\w+\b )))(.+\n?)$/m;
 
 function lineProcessor(string) {
   const parsed = string.match(parseRegex);
@@ -6,7 +6,7 @@ function lineProcessor(string) {
   return {
     mention: parsed[1],
     date: parsed[2],
-    sentence: parsed[4],
+    sentence: parsed[5] || parsed[4],
   };
 }
 
@@ -16,8 +16,8 @@ function markSeparators(string) {
 }
 
 function typeDefiner(messages) {
-  const regex = /^(?:\d{2}:?){3} (.+) :/;
-  const customerName = messages[0].mention.match(regex)[1];
+  const regex = /([a-zA-Z]+)/g;
+  const customerName = messages[0].mention.match(regex)[0];
 
   messages.map((message) => {
     message.type = message.mention.includes(customerName) ? 'customer' : 'agent';
