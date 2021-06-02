@@ -19,24 +19,24 @@ function typeDefiner(messages) {
   const regex = /([a-zA-Z]+)/g;
   const customerName = messages[0].mention.match(regex)[0];
 
-  messages.map((message) => {
+  for (let i = 0; i < messages.length; i += 1) {
+    const message = messages[i];
     message.type = message.mention.includes(customerName) ? 'customer' : 'agent';
-  });
+  }
 
   return messages;
-} 
+}
 
 function chatParser(string) {
   const lines = markSeparators(string).split('#separator#');
   const results = [];
 
-  for (let i = 0; i < lines.length; i++) {
+  for (let i = 0; i < lines.length; i += 1) {
     const line = lines[i];
     results.push(lineProcessor(line));
   }
 
   return typeDefiner(results);
 }
-
 
 module.exports = chatParser;
