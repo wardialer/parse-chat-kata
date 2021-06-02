@@ -1,0 +1,22 @@
+{
+  "name": "parse-chat-kata",
+  "version": "1.0.0",
+  "description": "Solution for the parse-chat kata exercise",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wonderflow-bv/parse-chat-kata.git"
+  },
+  "author": "Giuseppe Raveduto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wonderflow-bv/parse-chat-kata/issues"
+  },
+  "homepage": "https://github.com/wonderflow-bv/parse-chat-kata#readme",
+  "devDependencies": {
+    "jest": "^27.0.3"
+  }
+}
