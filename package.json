@@ -4,9 +4,10 @@
   "description": "Solution for the parse-chat kata exercise",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
     "lint": "eslint . --ext .js",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "test": "npm run lint && jest",
+    "test:watch": "jest --watch"
   },
   "repository": {
     "type": "git",

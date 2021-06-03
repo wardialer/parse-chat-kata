@@ -9,7 +9,6 @@ test('single sentence', () => {
     type: 'customer'
   }];
 
-
   expect(chatParser(input)).toEqual(output);
 });
 
@@ -31,7 +30,6 @@ test('two sentences', () => {
     type: 'agent'
   }]
   ;
-
 
   expect(chatParser(input)).toEqual(output);
 });
@@ -66,7 +64,6 @@ test('two customer mentions as start', () => {
     type: 'customer'
   }];
 
-
   expect(chatParser(input)).toEqual(output);
 });
 
@@ -87,7 +84,6 @@ test('date splitting', () => {
     type: 'agent'
   }];
 
-
   expect(chatParser(input)).toEqual(output);
 });
 
@@ -107,7 +103,6 @@ test('ignore extra dates', () => {
     sentence: 'I received it at 12:24:48, ut blandit lectus.',
     type: 'agent'
   }];
-
 
   expect(chatParser(input)).toEqual(output);
 });
@@ -130,7 +125,6 @@ test('full name', () => {
   }]
   ;
 
-
   expect(chatParser(input)).toEqual(output);
 });
 
@@ -151,7 +145,6 @@ test('missing colon after the names', () => {
     type: 'agent'
   }]
   ;
-
 
   expect(chatParser(input)).toEqual(output);
 });
