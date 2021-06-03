@@ -1,0 +1,30 @@
+{
+  "name": "parse-chat-kata",
+  "version": "1.0.0",
+  "description": "Solution for the parse-chat kata exercise",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint . --ext .js",
+    "lint:fix": "npm run lint -- --fix",
+    "test": "npm run lint && jest",
+    "test:watch": "jest --watch",
+    "generate-docs": "jsdoc -c .jsdoc_conf.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wonderflow-bv/parse-chat-kata.git"
+  },
+  "author": "Giuseppe Raveduto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wonderflow-bv/parse-chat-kata/issues"
+  },
+  "homepage": "https://github.com/wonderflow-bv/parse-chat-kata#readme",
+  "devDependencies": {
+    "eslint": "^7.27.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.4",
+    "jest": "^27.0.3",
+    "jsdoc": "^3.6.7"
+  }
+}
