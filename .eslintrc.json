@@ -3,7 +3,7 @@
         "browser": true,
         "es2021": true
     },
-    "ignorePatterns": ["*.test.js", "**/test/"],
+    "ignorePatterns": ["*.test.js", "**/test/", "**/docs/"],
     "extends": [
         "airbnb-base"
     ],
